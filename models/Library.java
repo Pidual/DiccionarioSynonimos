@@ -10,8 +10,12 @@ public class Library {
         wordsList = new ArrayList<>();
     }
 
-    public void addWord(Word word){
-        wordsList.add(word);
+    public void createWord(String addWord){
+        Word word = new Word(addWord, null);
+    }
+
+    public void addWord(){
+        wordsList.add();
     }
 
     public Word searchWord(String word){
@@ -25,7 +29,7 @@ public class Library {
     }
 
     public void addSynonimous(String word, String synonimous){
-        
+        addWord(searchWord(word), synonimous);
     }
 
 }
