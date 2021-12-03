@@ -1,9 +1,14 @@
 package presenter;
 
-class Presenter{
- 
-    public static void main(String[] args) {
-        
+import models.Library;
+import views.DiccionaryView;
+
+public class Presenter{
+
+    public void run() {
+        Library theWikipedia = new Library();
+        DiccionaryView view = new DiccionaryView();
     }
+    
 
 }
