@@ -1,6 +1,7 @@
 package views;
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.*;
 import java.util.*;
@@ -24,10 +25,6 @@ public class SearchPanel extends JPanel {
         // gbc.gridy = 0; // Grid Y a 0
         // txtPropertyNumber = new JTextField(15);
         // add(txtPropertyNumber,gbc);
-    }
-
-    public String getPropertyNumber(){
-        return txtPropertyNumber.getText();
     }
 
 }

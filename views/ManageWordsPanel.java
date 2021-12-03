@@ -1,5 +1,8 @@
 package views;
 
-public class ManageWordsPanel {
+import javax.swing.JPanel;
+
+public class ManageWordsPanel extends JPanel{
+    
     
 }
