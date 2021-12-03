@@ -20,17 +20,19 @@ public class DiccionaryView extends JFrame {
         this.setVisible(true);
     }
 
-    private void initComponents() {
-        this.setLayout(new GridLayout(4,1));
+    private void initComponents() {  //inicia el FRAME
+        this.setLayout(new GridLayout(3,1));
 
-        sp = new SearchPanel();
+        sp = new SearchPanel(); //INICIA EL PANEL de busqueda
         sp.setBackground(new Color( 46, 94, 170)); 
         add(sp);
 
-        ss = new SynonimShower();
+        ss = new SynonimShower(); //Inicia el panel que muestra los sinonimos
         ss.setBackground(new Color(188, 128, 52)); //cOLOR para puntos de stylo
         add(ss);
-        
+
+        mwp = new ManageWordsPanel();
+        mwp.setBackground(new Color(34,139,34));  
     }
     
 
