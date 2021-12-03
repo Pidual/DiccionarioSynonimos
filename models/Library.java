@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Library {
 
-    ArrayList<Word> wordsList = new ArrayList<>();    
+    ArrayList<Word> wordsList = new ArrayList<>();      
 
     public Library(){
         wordsList = new ArrayList<>();
