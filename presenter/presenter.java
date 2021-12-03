@@ -6,7 +6,7 @@ import views.DiccionaryView;
 public class Presenter{
 
     public void run() {
-        Library theWikipedia = new Library();
+        //Library theWikipedia = new Library();
         DiccionaryView view = new DiccionaryView();
     }
     
