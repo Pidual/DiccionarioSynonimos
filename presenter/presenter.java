@@ -1,6 +1,6 @@
 package presenter;
 
-import models.Library;
+import models.Dictionary;
 import views.DiccionaryView;
 
 public class Presenter{
