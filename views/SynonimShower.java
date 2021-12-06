@@ -3,9 +3,6 @@ package views;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-
 public class SynonimShower extends JPanel {
     
     private JButton addWord;
