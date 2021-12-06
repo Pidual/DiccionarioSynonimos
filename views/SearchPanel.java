@@ -22,7 +22,7 @@ public class SearchPanel extends JPanel {
         GridBagConstraints gbc = new GridBagConstraints();
         
         textWord = new JLabel("Word:");
-        textWord.setBackground(new Color(0, 248, 0));
+        textWord.setBackground(new Color(7, 30, 34));
         add(textWord, gbc);
 
         gbc.gridx = 1;
@@ -33,7 +33,7 @@ public class SearchPanel extends JPanel {
         gbc.gridx = 2;
         gbc.gridy = 0;
         btnSearch = new JButton("Find Synonyms");
-        btnSearch.setBackground(new Color(255, 248, 240));  //LE DA EL COLOR ROSADO AL BOTON
+        btnSearch.setBackground(new Color(85, 140, 140));  //LE DA EL COLOR ROSADO AL BOTON
         add(btnSearch, gbc); // Gbc con valores default
         // gbc.gridx = 1; // Grid x a 0
         // gbc.gridy = 0; // Grid Y a 0
