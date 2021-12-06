@@ -5,7 +5,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.*;
-import java.util.*;
 
 public class SearchPanel extends JPanel {
 
@@ -18,7 +17,7 @@ public class SearchPanel extends JPanel {
         initComponents();
     }
 
-    public void initComponents( ){ //Componentes del panel de busqueda
+    private void initComponents( ){ //Componentes del panel de busqueda
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         
