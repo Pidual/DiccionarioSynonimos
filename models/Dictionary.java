@@ -2,12 +2,12 @@ package models;
 
 import java.util.ArrayList;
 
-public class Library {
+public class Dictionary {
 
     ArrayList<Word> wordsList = new ArrayList<>();      
 
-    public Library(){
-        wordsList = new ArrayList<>();
+    public Dictionary(){
+        wordsList = new ArrayList<Word>();
     }
 
     public Word createWord(String addWord){
