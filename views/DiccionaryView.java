@@ -1,6 +1,8 @@
 package views;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
+import javax.swing.border.EtchedBorder;
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -28,6 +30,7 @@ public class DiccionaryView extends JFrame {
         add(sp);
 
         mwp = new ManageWordsPanel();
+        mwp.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Synonyms"));
         add(mwp);
 
         ss = new SynonimShower(); // Inicia el panel que muestra los sinonimos

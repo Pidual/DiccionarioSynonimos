@@ -1,51 +1,46 @@
 package views;
 
-import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 
-public class ManageWordsPanel extends JPanel{
+public class ManageWordsPanel extends JPanel {
     // Botones text box y un boton
 
     private JButton leftArrows;
     private JTextField wordShowcaser;
     private JButton rigthArrows;
-    private JLabel panelTitle;
-    private JSeparator separador;
-    
-    public ManageWordsPanel(){
+    private JLabel synonymCounter;
+
+    public ManageWordsPanel() {
         initComponents();
     }
 
-    private void initComponents( ){ //Componentes del panel de busqueda
+    private void initComponents() { // Componentes del panel de busqueda
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
-        
-        panelTitle = new JLabel("Synonyms");
-        add(panelTitle,gbc);
 
-        gbc.gridy = 1;
         leftArrows = new JButton("<<");
         add(leftArrows, gbc);
 
         gbc.gridx = 2;
-        gbc.gridy = 1;
+        gbc.gridy = 0;
         wordShowcaser = new JTextField(15);
-        add(wordShowcaser,gbc);
+        add(wordShowcaser, gbc);
 
         gbc.gridx = 3;
-        gbc.gridy = 1;
+        gbc.gridy = 0;
         rigthArrows = new JButton(">>");
         add(rigthArrows, gbc); // Gbc con valores default
-        // gbc.gridx = 1; // Grid x a 0
-        // gbc.gridy = 0; // Grid Y a 0
-        
+
+        gbc.gridx = 2;
+        gbc.gridy = 3;
+        synonymCounter = new JLabel("synonymCounter"); // TODO implementar lo de los numeros
+        add(synonymCounter, gbc);
+
     }
 }
