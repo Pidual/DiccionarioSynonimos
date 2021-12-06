@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class SearchPanel extends JPanel {
 
@@ -13,11 +14,11 @@ public class SearchPanel extends JPanel {
     private JButton btnSearch;
     
 
-    public SearchPanel( ){
-        initComponents();
+    public SearchPanel(ActionListener listener){
+        initComponents(listener);
     }
 
-    private void initComponents( ){ //Componentes del panel de busqueda
+    private void initComponents(ActionListener listener){ //Componentes del panel de busqueda
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         
@@ -33,10 +34,12 @@ public class SearchPanel extends JPanel {
         gbc.gridx = 2;
         gbc.gridy = 0;
         btnSearch = new JButton("Find Synonyms");
+        btnSearch.setActionCommand("findTheSynonym");
+        btnSearch.addActionListener(listener);
         btnSearch.setBackground(new Color(85, 140, 140));  //LE DA EL COLOR ROSADO AL BOTON
         add(btnSearch, gbc); // Gbc con valores default
-        // gbc.gridx = 1; // Grid x a 0
-        // gbc.gridy = 0; // Grid Y a 0
+      
+
         
     }
 
