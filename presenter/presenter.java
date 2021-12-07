@@ -24,6 +24,12 @@ public class Presenter implements ActionListener{
                System.out.println(view.getText("SearchPanel")); 
 
                 break;
+            case "leftButtonPressed":
+                System.out.println("El boton << presionado");
+            break;
+            case "rigthButtonPressed":
+                System.out.println("El boton >> presionado");
+            break;
             
             default:
                 break;

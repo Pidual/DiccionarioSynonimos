@@ -7,6 +7,7 @@ import javax.swing.JTextField;
 
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import java.awt.event.ActionListener;
 
 public class ManageWordsPanel extends JPanel {
     // Botones text box y un boton
@@ -16,15 +17,17 @@ public class ManageWordsPanel extends JPanel {
     private JButton rigthArrows;
     private JLabel synonymCounter;
 
-    public ManageWordsPanel() {
-        initComponents();
+    public ManageWordsPanel(ActionListener listener) {
+        initComponents(listener);
     }
 
-    private void initComponents() { // Componentes del panel de busqueda
+    private void initComponents(ActionListener listener) { // Componentes del panel de busqueda
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
         leftArrows = new JButton("<<");
+        leftArrows.setActionCommand("leftButtonPressed");
+        leftArrows.addActionListener(listener);
         add(leftArrows, gbc);
 
         gbc.gridx = 2;
@@ -35,6 +38,8 @@ public class ManageWordsPanel extends JPanel {
         gbc.gridx = 3;
         gbc.gridy = 0;
         rigthArrows = new JButton(">>");
+        rigthArrows.setActionCommand("rigthButtonPressed");
+        rigthArrows.addActionListener(listener);
         add(rigthArrows, gbc); // Gbc con valores default
 
         gbc.gridx = 2;

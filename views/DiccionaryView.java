@@ -5,8 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.border.EtchedBorder;
 
 import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 
@@ -33,9 +31,8 @@ public class DiccionaryView extends JFrame {
         sp.setPreferredSize(sp.getPreferredSize());
         add(sp, BorderLayout.NORTH);
 
-        mwp = new ManageWordsPanel();
-        mwp.setBorder(
-                BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Synonyms"));
+        mwp = new ManageWordsPanel(listener);
+        mwp.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Synonyms"));
         mwp.setPreferredSize(mwp.getPreferredSize());
         add(mwp, BorderLayout.CENTER);
 
@@ -47,15 +44,7 @@ public class DiccionaryView extends JFrame {
     }
 
     public String getText(String option){
-        String theText = "";
-        switch (option) {
-            case "SearchPanel":
-                theText = sp.getText();
-                break;
-            default:
-                break;
-        }
-        return theText;
+        return sp.getText();
     }
 
 }
