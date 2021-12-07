@@ -10,8 +10,8 @@ public class Dictionary {
         wordsList = new ArrayList<Word>();
     }
 
-    public Word createWord(String addWord){
-        Word word = new Word(addWord, null);
+    public Word createWord(String addWord, ArrayList<String> words){
+        Word word = new Word(addWord, words);
         return word;
     }
 
@@ -20,7 +20,7 @@ public class Dictionary {
     }
 
     public void addWord(String word){
-        wordsList.add(createWord(word));
+        wordsList.add(createWord(word,null));
     }
 
     public Word searchWord(String word){

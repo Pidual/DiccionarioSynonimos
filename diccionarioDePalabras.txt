@@ -1,0 +1,3 @@
+agua	liquido	fluido	aguoso
+liquido	fluido	aguoso	agua
+fluido agua liquido 

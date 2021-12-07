@@ -2,17 +2,25 @@ package presenter;
 
 import models.Dictionary;
 import views.DiccionaryView;
+import persitence.FileOperation;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class Presenter implements ActionListener{
     
     private DiccionaryView view;
+    private Dictionary wikipedia;
+    private FileOperation fileOperation;
+    private ArrayList<String> wordAndSynonymsList;
 
-    public void run() {
-        //Library theWikipedia = new Library();
+    public void run(){
+        wikipedia = new Dictionary();
         view = new DiccionaryView(this);
+        fileOperation = new FileOperation();
+        load();
     }
     
 
@@ -21,7 +29,6 @@ public class Presenter implements ActionListener{
 		String command = event.getActionCommand();
         switch (command) {
             case "findTheSynonym":
-               System.out.println(view.getText("SearchPanel")); 
 
                 break;
             case "leftButtonPressed":
@@ -41,5 +48,19 @@ public class Presenter implements ActionListener{
                 break;
         }
 	}
+
+    public void load(){ //RECIBE TODO DE FILEOPERATION Y EMPIEZA A CREAR PALABRAS
+        wordAndSynonymsList = fileOperation.loadTextFile("diccionarioDePalabras.txt");
+        for (String words : wordAndSynonymsList) {
+			System.out.println(words);
+		}
+		//un predio por partes
+		String[] partes = wordAndSynonymsList.get(0).split("\t");
+		for (int i = 0; i < partes.length; i++) {
+			System.out.println(partes[i]);
+            
+		}
+        
+    }
 
 }
