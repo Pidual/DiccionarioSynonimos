@@ -30,6 +30,12 @@ public class Presenter implements ActionListener{
             case "rigthButtonPressed":
                 System.out.println("El boton >> presionado");
             break;
+            case "addWord":
+                System.out.println("Palabra activada");
+            break;
+            case "addSynonym":
+                System.out.println("Sinonimo activado");
+            break;
             
             default:
                 break;

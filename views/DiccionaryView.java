@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class DiccionaryView extends JFrame {
 
     private SearchPanel sp;
-    private SynoymMannager ss;
+    private SynoymMannagerPanel ss;
     private ManageWordsPanel mwp;
 
     public DiccionaryView(ActionListener listener) {
@@ -36,7 +36,7 @@ public class DiccionaryView extends JFrame {
         mwp.setPreferredSize(mwp.getPreferredSize());
         add(mwp, BorderLayout.CENTER);
 
-        ss = new SynoymMannager(); // Inicia el panel que muestra los sinonimos
+        ss = new SynoymMannagerPanel(listener); // Inicia el panel que muestra los sinonimos
         ss.setBackground(new Color(254, 204, 102)); // cOLOR para puntos de stylo
         ss.setPreferredSize(ss.getPreferredSize());
         add(ss, BorderLayout.SOUTH);
