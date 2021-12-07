@@ -3,12 +3,12 @@ package views;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-public class SynonimShower extends JPanel {
+public class SynoymMannager extends JPanel {
     
     private JButton addWord;
     private JButton addSynonym;
 
-    public SynonimShower(){
+    public SynoymMannager(){
         initComponents();
     }
 
