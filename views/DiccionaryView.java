@@ -46,4 +46,16 @@ public class DiccionaryView extends JFrame {
 
     }
 
+    public String getText(String option){
+        String theText = "";
+        switch (option) {
+            case "SearchPanel":
+                theText = sp.getText();
+                break;
+            default:
+                break;
+        }
+        return theText;
+    }
+
 }

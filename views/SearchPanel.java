@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 public class SearchPanel extends JPanel {
 
     private JLabel textWord;
-    private JTextField txtPropertyNumber;
+    private JTextField txtSynonym;
     private JButton btnSearch;
     
 
@@ -28,8 +28,8 @@ public class SearchPanel extends JPanel {
 
         gbc.gridx = 1;
         gbc.gridy = 0;
-        txtPropertyNumber = new JTextField(15);
-        add(txtPropertyNumber,gbc);
+        txtSynonym = new JTextField(15);
+        add(txtSynonym,gbc);
 
         gbc.gridx = 2;
         gbc.gridy = 0;
@@ -38,9 +38,10 @@ public class SearchPanel extends JPanel {
         btnSearch.addActionListener(listener);
         btnSearch.setBackground(new Color(85, 140, 140));  //LE DA EL COLOR ROSADO AL BOTON
         add(btnSearch, gbc); // Gbc con valores default
-      
+    }
 
-        
+    public String getText() {
+        return txtSynonym.getText();
     }
 
 }

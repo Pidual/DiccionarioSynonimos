@@ -8,19 +8,26 @@ import java.awt.event.ActionListener;
 
 public class Presenter implements ActionListener{
     
+    private DiccionaryView view;
+
     public void run() {
         //Library theWikipedia = new Library();
-        DiccionaryView view = new DiccionaryView(this);
+        view = new DiccionaryView(this);
     }
     
 
     @Override
 	public void actionPerformed(ActionEvent event) {
 		String command = event.getActionCommand();
-		if (command.equals("findTheSynonym")) {
-			//TODO implementar a Modoelo le toca a a erik
-            System.out.println("EL PEPEPE");
-		}
+        switch (command) {
+            case "findTheSynonym":
+               System.out.println(view.getText("SearchPanel")); 
+
+                break;
+            
+            default:
+                break;
+        }
 	}
 
 }
