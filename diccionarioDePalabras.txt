@@ -1,3 +1,4 @@
 agua	liquido	fluido	aguoso
 liquido	fluido	aguoso	agua
-fluido agua liquido 
+fluido	agua	liquido 
+Comida	alimento	nutrientes	sustento
