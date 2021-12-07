@@ -51,17 +51,10 @@ public class Dictionary {
     public Word searchWord(String word) {
         Word searchedWord = null;
         for (Word words : wordsList) {
-            if (words.getWord().equals(word)) {
+            if (words.getWord().equalsIgnoreCase(word)) {
                 searchedWord = words;
             }
         }
         return searchedWord;
     }
-
-    public void testeo(){
-        for (Word palabrini : wordsList) {
-            System.out.println(palabrini.toString());
-        }
-    }
-
 }

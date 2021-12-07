@@ -22,6 +22,6 @@ public class Word {
 
     @Override
     public String toString() {
-        return word+" synonyms =" + synonimousList + ", word=" + word + "]";
+        return word+" synonyms =" + synonimousList;
     }
 }

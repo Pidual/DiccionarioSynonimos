@@ -43,7 +43,7 @@ public class DiccionaryView extends JFrame {
 
     }
 
-    public String getText(String option){
+    public String getText(){
         return sp.getText();
     }
 
