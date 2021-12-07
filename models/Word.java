@@ -24,4 +24,8 @@ public class Word {
     public String toString() {
         return word+" synonyms =" + synonimousList;
     }
+
+    public int getSynonymCount() {
+        return synonimousList.size();
+    }
 }

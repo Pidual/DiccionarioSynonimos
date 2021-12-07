@@ -27,7 +27,11 @@ public class Presenter implements ActionListener {
         String command = event.getActionCommand();
         switch (command) {
             case "findTheSynonym":
-                System.out.println(wikipedia.searchWord(view.getText()));
+                String text;
+                int counter;
+                text = view.getText();
+                counter = wikipedia.searchWord(text).getSynonymCount();
+                view.actualizeWordShowCaser(text,counter);
                 break;
             case "leftButtonPressed":
                 System.out.println("El boton << presionado");

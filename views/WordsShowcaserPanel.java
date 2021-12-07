@@ -9,7 +9,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionListener;
 
-public class ManageWordsPanel extends JPanel {
+public class WordsShowcaserPanel extends JPanel {
     // Botones text box y un boton
 
     private JButton leftArrows;
@@ -17,7 +17,7 @@ public class ManageWordsPanel extends JPanel {
     private JButton rigthArrows;
     private JLabel synonymCounter;
 
-    public ManageWordsPanel(ActionListener listener) {
+    public WordsShowcaserPanel(ActionListener listener) {
         initComponents(listener);
     }
 
@@ -47,5 +47,10 @@ public class ManageWordsPanel extends JPanel {
         synonymCounter = new JLabel("synonymCounter"); // TODO implementar lo de los numeros
         add(synonymCounter, gbc);
 
+    }
+
+    public void actualizeWordShowCaser(String text, int counter){
+        wordShowcaser.setText(text);
+        synonymCounter.setText("Synonym Counter: "+Integer.toString(counter));
     }
 }

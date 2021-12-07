@@ -12,7 +12,7 @@ public class DiccionaryView extends JFrame {
 
     private SearchPanel sp;
     private SynoymMannagerPanel ss;
-    private ManageWordsPanel mwp;
+    private WordsShowcaserPanel wsp;
 
     public DiccionaryView(ActionListener listener) {
         super("Synonims Diccionary");
@@ -31,10 +31,10 @@ public class DiccionaryView extends JFrame {
         sp.setPreferredSize(sp.getPreferredSize());
         add(sp, BorderLayout.NORTH);
 
-        mwp = new ManageWordsPanel(listener);
-        mwp.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Synonyms"));
-        mwp.setPreferredSize(mwp.getPreferredSize());
-        add(mwp, BorderLayout.CENTER);
+        wsp = new WordsShowcaserPanel(listener);
+        wsp.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Synonyms"));
+        wsp.setPreferredSize(wsp.getPreferredSize());
+        add(wsp, BorderLayout.CENTER);
 
         ss = new SynoymMannagerPanel(listener); // Inicia el panel que muestra los sinonimos
         ss.setBackground(new Color(254, 204, 102)); // cOLOR para puntos de stylo
@@ -45,6 +45,10 @@ public class DiccionaryView extends JFrame {
 
     public String getText(){
         return sp.getText();
+    }
+
+    public void actualizeWordShowCaser(String text , int counter){
+        wsp.actualizeWordShowCaser(text,counter);
     }
 
 }
