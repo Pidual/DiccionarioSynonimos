@@ -60,7 +60,7 @@ public class Presenter implements ActionListener {
             case "addWord":
                     wikipedia.addWord(view.getJDialogText());
                     System.out.println(wikipedia.getWordList());
-                    System.out.println("boton presionado");
+                    
                 break;
             case "addSynonym":
                    
