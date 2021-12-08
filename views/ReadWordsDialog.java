@@ -9,7 +9,8 @@ public class ReadWordsDialog extends JDialog{
     JTextField txtWord;
     JButton btnFunction;
 
-    public ReadWordsDialog(){
+    public ReadWordsDialog(SynoymMannagerPanel smp, boolean modal){
+        super();
         initComponents();
     }
 

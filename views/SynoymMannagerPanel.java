@@ -25,12 +25,14 @@ public class SynoymMannagerPanel extends JPanel {
         add(addSynonym);
     }
 
-    private void ActionPerformed(ActionEvent evt){
-        ReadWordsDialog rwd = new ReadWordsDialog();
-        rwd.setTitle("Add Word");
-        rwd.setLocationRelativeTo(null);
-        rwd.setSize(500,200);
-        rwd.setVisible(true);
+    private void actionPerformed(ActionEvent e){
+        if(e.getSource() == addWord){
+            ReadWordsDialog rwd = new ReadWordsDialog(this, true);
+            rwd.setTitle("Add Word");
+            rwd.setLocationRelativeTo(null);
+            rwd.setSize(500,200);
+            rwd.setVisible(true);
+        }
     }
 
 }
