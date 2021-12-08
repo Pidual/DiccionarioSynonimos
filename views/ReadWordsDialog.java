@@ -4,12 +4,12 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JTextField;
 
-public class ReadWordPanel extends JDialog{
+public class ReadWordsDialog extends JDialog{
     
     JTextField txtWord;
     JButton btnFunction;
 
-    public ReadWordPanel(){
+    public ReadWordsDialog(){
         initComponents();
     }
 

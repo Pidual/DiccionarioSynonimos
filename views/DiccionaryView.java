@@ -13,6 +13,7 @@ public class DiccionaryView extends JFrame {
     private SearchPanel sp;
     private SynoymMannagerPanel ss;
     private WordsShowcaserPanel wsp;
+    private ReadWordsDialog rwp;
 
     public DiccionaryView(ActionListener listener, ActionEvent event) {
         super("Synonims Diccionary");
@@ -55,6 +56,10 @@ public class DiccionaryView extends JFrame {
     }
     public void wordNotFound(){
         wsp.actualizeWordShowCaser("SYNONYM NOT FOUND");
+    }
+
+    public String getJDialogText(){
+        return rwp.getText();
     }
 
 }
