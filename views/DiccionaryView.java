@@ -64,8 +64,8 @@ public class DiccionaryView extends JFrame {
     public String getJDialogText(){
         return rwd.getText();
     }
-    public void showJDialog(){
-        rwd.setVisible(true);
+    public void setJDialogVisibility(boolean status){
+        rwd.setVisible(status);
     }
 
 }
