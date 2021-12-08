@@ -12,7 +12,7 @@ public class DiccionaryView extends JFrame {
     private SearchPanel sp;
     private SynoymMannagerPanel ss;
     private WordsShowcaserPanel wsp;
-    private ReadWordPanel rwp;
+    private ReadWordsDialog rwp;
 
     public DiccionaryView(ActionListener listener) {
         super("Synonims Diccionary");
@@ -41,7 +41,7 @@ public class DiccionaryView extends JFrame {
         ss.setPreferredSize(ss.getPreferredSize());
         add(ss, BorderLayout.SOUTH);
 
-        rwp = new ReadWordPanel(listener); // Inicia el panel que muestra los sinonimos
+        rwp = new ReadWordsDialog(listener); // Inicia el panel que muestra los sinonimos
         rwp.setBackground(new Color(254, 204, 102)); // cOLOR para puntos de stylo
         rwp.setPreferredSize(ss.getPreferredSize());
         rwp.setVisible(true);
@@ -62,6 +62,10 @@ public class DiccionaryView extends JFrame {
     }
     public void wordNotFound(){
         wsp.actualizeWordShowCaser("SYNONYM NOT FOUND");
+    }
+
+    public String getJDialogText(){
+        return rwp.getText();
     }
 
 }

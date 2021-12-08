@@ -6,14 +6,14 @@ import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class ReadWordPanel extends JDialog{
+public class ReadWordsDialog extends JDialog{
     
     JTextField txtWord;
     JButton btnFunction;
 
-    public ReadWordPanel(ActionListener listener){
+    public ReadWordsDialog(ActionListener listener){
         this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setVisible(true);
     }
 
