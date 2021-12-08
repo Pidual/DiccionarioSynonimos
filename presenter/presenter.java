@@ -64,7 +64,6 @@ public class Presenter implements ActionListener {
                 break;
         }
     }
-
     /**
      * Este metodo carga los archivos de texto
      */

@@ -10,7 +10,7 @@ public class Dictionary {
         wordsList = new ArrayList<Word>();
     }
 
-    private Word createWord(String addWord, ArrayList<String> words) {
+    public Word createWord(String addWord, ArrayList<String> words) {
         Word word = new Word(addWord, words);
         return word;
     }
