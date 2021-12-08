@@ -1,0 +1,6 @@
+agua   liquido   fluido   aguoso   
+liquido   fluido   aguoso   agua   
+fluido   agua   liquido    
+comida   alimento   nutrientes   sustento   
+mEGA   
+nitrox   

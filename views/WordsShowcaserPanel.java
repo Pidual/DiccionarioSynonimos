@@ -44,7 +44,7 @@ public class WordsShowcaserPanel extends JPanel {
 
         gbc.gridx = 2;
         gbc.gridy = 3;
-        synonymCounter = new JLabel("synonymCounter"); // TODO implementar lo de los numeros
+        synonymCounter = new JLabel("synonymCounter");
         add(synonymCounter, gbc);
 
     }

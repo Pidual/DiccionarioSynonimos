@@ -8,22 +8,21 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionListener;
 
-public class ReadWordsDialog extends JDialog {
+public class ReadSynonymsDialog extends JDialog {
 
     JTextField txtWord;
-    JButton btnAddWord;
+    JButton btnAddSynonym;
     JLabel message;
 
-    public ReadWordsDialog(ActionListener listener) {
+    public ReadSynonymsDialog(ActionListener listener) {
         initComponents(listener);
     }
 
     public void initComponents(ActionListener listener) {
         this.setLayout(new GridBagLayout());
-        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         GridBagConstraints gbc = new GridBagConstraints();
 
-        message = new JLabel("Type the words to add");
+        message = new JLabel("Type the synonym to add");
         add(message, gbc);
 
         gbc.gridy = 1;
@@ -31,10 +30,10 @@ public class ReadWordsDialog extends JDialog {
         add(txtWord, gbc);
 
         gbc.gridy = 2;
-        btnAddWord = new JButton("Add Word");
-        btnAddWord.setActionCommand("addWord");
-        btnAddWord.addActionListener(listener);
-        add(btnAddWord, gbc);
+        btnAddSynonym = new JButton("Add Synonym");
+        btnAddSynonym.setActionCommand("addSynonym");
+        btnAddSynonym.addActionListener(listener);
+        add(btnAddSynonym, gbc);
     }
 
     public String getText() {

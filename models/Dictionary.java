@@ -16,7 +16,11 @@ public class Dictionary {
     }
 
     public void addSynonimous(Word word, String synonimous) {
-        word.addSynonym(synonimous);
+         for (Word theword : wordsList) {
+             if(theword == word) {
+                theword.addSynonym(synonimous);
+             }
+         }
     }
 
     /**
@@ -34,7 +38,6 @@ public class Dictionary {
     /**
      * Metodo Auxuliar para quitar el primer elemento de un Array y de paso
      * convertirlo en una lista
-     * 
      * @param partes
      * @return una lista sin el primer elemento del array
      */
@@ -56,7 +59,12 @@ public class Dictionary {
         return searchedWord;
     }
 
-    public ArrayList<Word> getWordList(){
-        return wordsList;
+    public ArrayList<String> getWordListFormated(){
+        ArrayList<String> ephemeral = new ArrayList<String>();
+        for (int i = 0; i < wordsList.size(); i++) {
+            ephemeral.add(wordsList.get(i).getWordFormated() + wordsList.get(i).getSynonymsListFormated() +"\n");
+        }
+        return ephemeral;
     }
+
 }

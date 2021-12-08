@@ -18,7 +18,7 @@ public class Presenter implements ActionListener {
 
     public void run() {
         wikipedia = new Dictionary();
-        view = new DiccionaryView(this, null);
+        view = new DiccionaryView(this);
         fileOperation = new FileOperation();
         load();
     }
@@ -26,46 +26,54 @@ public class Presenter implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent event) {
         String command = event.getActionCommand();
-        String  text = view.getText();
+        String text = view.getText();
         switch (command) {
             case "findTheSynonym":
                 if (wikipedia.searchWord(text) == null) {
                     view.wordNotFound();
-                } else if(wikipedia.searchWord(text).getSynonymCount() == 0){
+                } else if (wikipedia.searchWord(text).getSynonymCount() == 0) {
                     counter = wikipedia.searchWord(text).getSynonymCount();
-                view.actualizeWordShowCaser("Word has not synonyms",counter);
+                    view.actualizeWordShowCaser("Word has not synonyms", counter);
                 } else {
                     counter = wikipedia.searchWord(text).getSynonymCount();
-                    view.actualizeWordShowCaser(wikipedia.searchWord(text).getSynonymsList().get(i),counter);
+                    view.actualizeWordShowCaser(wikipedia.searchWord(text).getSynonymsList().get(i), counter);
                 }
                 break;
             case "leftButtonPressed":
-                    i--;
-                    if(i < 0) {
-                        i = counter-1;
-                    }
-                    view.actualizeWordShowCaserSynonyms(wikipedia.searchWord(text).getSynonymsList().get(i));
+                i--;
+                if (i < 0) {
+                    i = counter - 1;
+                }
+                view.actualizeWordShowCaserSynonyms(wikipedia.searchWord(text).getSynonymsList().get(i));
                 break;
             case "rigthButtonPressed":
-                    i++;
-                    if(i > counter-1) {
-                        i = 0;
-                    }
-                    view.actualizeWordShowCaserSynonyms(wikipedia.searchWord(text).getSynonymsList().get(i));
+                i++;
+                if (i > counter - 1) {
+                    i = 0;
+                }
+                view.actualizeWordShowCaserSynonyms(wikipedia.searchWord(text).getSynonymsList().get(i));
                 break;
-            case "ShowAddWord": 
-                    view.setJDialogVisibility(true);
+            case "ShowAddWord":
+                view.setJDialogWordsVisibility(true);
                 break;
 
+            case "ShowAddSynonym":
+                view.setJDialogSynonymsVisibility(true);
+                break;
             case "addWord":
-                    wikipedia.addWord(view.getJDialogText());
-                    System.out.println(wikipedia.getWordList());
-                    view.setJDialogVisibility(false);
+                wikipedia.addWord(view.getJDialogForWords());
+                view.setJDialogWordsVisibility(false);
+                save();
                 break;
             case "addSynonym":
-                   
-
+                wikipedia.addSynonimous(wikipedia.searchWord(text), view.getJDialogForSynonyms());
+                view.setJDialogSynonymsVisibility(false);
+                save();
                 break;
+
+            case "save":
+                save();
+            break;
             default:
                 break;
         }
@@ -80,6 +88,10 @@ public class Presenter implements ActionListener {
             String[] partes = wordAndSynonymsList.get(i).split("\t");
             wikipedia.addWord(partes);
         }
+    }
+
+    public void save(){ 
+        fileOperation.saveTextFile(wikipedia.getWordListFormated());
     }
 
 }

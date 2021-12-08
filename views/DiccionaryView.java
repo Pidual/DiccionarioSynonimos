@@ -6,7 +6,6 @@ import javax.swing.border.EtchedBorder;
 import java.awt.Color;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class DiccionaryView extends JFrame {
 
@@ -14,8 +13,9 @@ public class DiccionaryView extends JFrame {
     private SynoymMannagerPanel ss;
     private WordsShowcaserPanel wsp;
     private ReadWordsDialog rwd;
+    private ReadSynonymsDialog rsd;
 
-    public DiccionaryView(ActionListener listener, ActionEvent event) {
+    public DiccionaryView(ActionListener listener) {
         super("Synonims Diccionary");
         initComponents(listener);
         setSize(500, 200); // width and height
@@ -44,6 +44,10 @@ public class DiccionaryView extends JFrame {
         rwd = new ReadWordsDialog(listener);
         rwd.setSize(250, 150);
         rwd.setLocationRelativeTo(null);
+
+        rsd = new ReadSynonymsDialog(listener);
+        rsd.setSize(250, 150);
+        rsd.setLocationRelativeTo(null);
     }
 
     public String getText(){
@@ -61,11 +65,19 @@ public class DiccionaryView extends JFrame {
         wsp.actualizeWordShowCaser("SYNONYM NOT FOUND");
     }
 
-    public String getJDialogText(){
+    public String getJDialogForWords(){
         return rwd.getText();
     }
-    public void setJDialogVisibility(boolean status){
+
+    public String getJDialogForSynonyms(){
+        return rsd.getText();
+    }
+    
+    public void setJDialogWordsVisibility(boolean status){
         rwd.setVisible(status);
     }
 
+    public void setJDialogSynonymsVisibility(boolean status){
+        rsd.setVisible(status);
+    }
 }
