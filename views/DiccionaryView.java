@@ -41,10 +41,9 @@ public class DiccionaryView extends JFrame {
         ss.setPreferredSize(ss.getPreferredSize());
         add(ss, BorderLayout.SOUTH);
 
-        rwd = new ReadWordsDialog();
+        rwd = new ReadWordsDialog(listener);
         rwd.setSize(250, 150);
         rwd.setLocationRelativeTo(null);
-        
     }
 
     public String getText(){
