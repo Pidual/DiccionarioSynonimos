@@ -31,9 +31,12 @@ public class Presenter implements ActionListener {
             case "findTheSynonym":
                 if (wikipedia.searchWord(text) == null) {
                     view.wordNotFound();
+                } else if(wikipedia.searchWord(text).getSynonymCount() == 0){
+                    counter = wikipedia.searchWord(text).getSynonymCount();
+                view.actualizeWordShowCaser("Word has not synonyms",counter);
                 } else {
-                counter = wikipedia.searchWord(text).getSynonymCount();
-                view.actualizeWordShowCaser(wikipedia.searchWord(text).getSynonymsList().get(i),counter);
+                    counter = wikipedia.searchWord(text).getSynonymCount();
+                    view.actualizeWordShowCaser(wikipedia.searchWord(text).getSynonymsList().get(i),counter);
                 }
                 break;
             case "leftButtonPressed":
@@ -55,6 +58,8 @@ public class Presenter implements ActionListener {
                 break;
 
             case "addWord":
+                    wikipedia.addWord(view.getJDialogText());
+                    System.out.println(wikipedia.getWordList());
                     System.out.println("boton presionado");
                 break;
             case "addSynonym":
