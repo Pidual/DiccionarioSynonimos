@@ -28,4 +28,8 @@ public class Word {
     public int getSynonymCount() {
         return synonimousList.size();
     }
+
+    public String getFirtsSynonym(){
+        return synonimousList.get(0);
+    }
 }

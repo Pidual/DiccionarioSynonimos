@@ -31,7 +31,7 @@ public class Presenter implements ActionListener {
                 int counter;
                 text = view.getText();
                 counter = wikipedia.searchWord(text).getSynonymCount();
-                view.actualizeWordShowCaser(text,counter);
+                view.actualizeWordShowCaser(wikipedia.searchWord(text).getFirtsSynonym(),counter);
                 break;
             case "leftButtonPressed":
                 System.out.println("El boton << presionado");
