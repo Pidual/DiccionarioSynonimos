@@ -6,15 +6,15 @@ import javax.swing.border.EtchedBorder;
 import java.awt.Color;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class DiccionaryView extends JFrame {
 
     private SearchPanel sp;
     private SynoymMannagerPanel ss;
     private WordsShowcaserPanel wsp;
-    private ReadWordPanel rwp;
 
-    public DiccionaryView(ActionListener listener) {
+    public DiccionaryView(ActionListener listener, ActionEvent event) {
         super("Synonims Diccionary");
         initComponents(listener);
         setSize(500, 200); // width and height
@@ -40,13 +40,6 @@ public class DiccionaryView extends JFrame {
         ss.setBackground(new Color(254, 204, 102)); // cOLOR para puntos de stylo
         ss.setPreferredSize(ss.getPreferredSize());
         add(ss, BorderLayout.SOUTH);
-
-        rwp = new ReadWordPanel(listener); // Inicia el panel que muestra los sinonimos
-        rwp.setBackground(new Color(254, 204, 102)); // cOLOR para puntos de stylo
-        rwp.setPreferredSize(ss.getPreferredSize());
-        rwp.setVisible(true);
-        add(rwp, BorderLayout.SOUTH);
-
     }
 
     public String getText(){

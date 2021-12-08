@@ -3,36 +3,21 @@ package views;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JTextField;
-import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class ReadWordPanel extends JDialog{
     
     JTextField txtWord;
     JButton btnFunction;
 
-    public ReadWordPanel(ActionListener listener){
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setVisible(true);
+    public ReadWordPanel(){
+        initComponents();
     }
 
-    public void initComponents(ActionListener listener){
-        this.setLayout(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-
-        gbc.gridx = 1;
-        gbc.gridy = 0;
+    public void initComponents(){
         txtWord = new JTextField(15);
-        add(txtWord, gbc);
-
-        gbc.gridx = 2;
-        gbc.gridy = 0;
-        btnFunction = new JButton("Find Synonyms");
-        btnFunction.setActionCommand("findTheSynonym");
-        btnFunction.addActionListener(listener);
-        btnFunction.setBackground(new Color(85, 140, 140));  //LE DA EL COLOR ROSADO AL BOTON
-        add(btnFunction, gbc); // Gbc con valores default
+        add(txtWord);
+        btnFunction = new JButton("Add Word");
+        add(btnFunction);
     }
 
     public String getText() {

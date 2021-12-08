@@ -18,7 +18,7 @@ public class Presenter implements ActionListener {
 
     public void run() {
         wikipedia = new Dictionary();
-        view = new DiccionaryView(this);
+        view = new DiccionaryView(this, null);
         fileOperation = new FileOperation();
         load();
     }
@@ -52,10 +52,10 @@ public class Presenter implements ActionListener {
                 break;
             case "addWord":
                     
-                    wikipedia.addWord(text); //JDialog :)
+                    //wikipedia.addWord(text); //JDialog :)
                 break;
             case "addSynonym":
-                    wikipedia.addSynonimous(wikipedia.searchWord(text), );
+                    //wikipedia.addSynonimous(wikipedia.searchWord(text), );
                 break;
             default:
                 break;
