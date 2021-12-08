@@ -13,7 +13,7 @@ public class DiccionaryView extends JFrame {
     private SearchPanel sp;
     private SynoymMannagerPanel ss;
     private WordsShowcaserPanel wsp;
-    private ReadWordsDialog rwp;
+    private ReadWordsDialog rwd;
 
     public DiccionaryView(ActionListener listener, ActionEvent event) {
         super("Synonims Diccionary");
@@ -26,7 +26,6 @@ public class DiccionaryView extends JFrame {
 
     private void initComponents(ActionListener listener) { // inicia el FRAME
         this.setLayout(new BorderLayout());
-
         sp = new SearchPanel(listener); // INICIA EL PANEL de busqueda ademas se pone su action liste
         sp.setBackground(new Color(46, 94, 170));
         sp.setPreferredSize(sp.getPreferredSize());
@@ -41,6 +40,11 @@ public class DiccionaryView extends JFrame {
         ss.setBackground(new Color(254, 204, 102)); // cOLOR para puntos de stylo
         ss.setPreferredSize(ss.getPreferredSize());
         add(ss, BorderLayout.SOUTH);
+
+        rwd = new ReadWordsDialog();
+        rwd.setSize(250, 150);
+        rwd.setLocationRelativeTo(null);
+        
     }
 
     public String getText(){
@@ -59,7 +63,10 @@ public class DiccionaryView extends JFrame {
     }
 
     public String getJDialogText(){
-        return rwp.getText();
+        return rwd.getText();
+    }
+    public void showJDialog(){
+        rwd.setVisible(true);
     }
 
 }

@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+
 public class SynoymMannagerPanel extends JPanel {
     
     private JButton addWord;
@@ -16,7 +17,7 @@ public class SynoymMannagerPanel extends JPanel {
 
     private void initComponents(ActionListener listener) {
         addWord = new JButton("add Word");
-        addWord.setActionCommand("addWord");
+        addWord.setActionCommand("ShowAddWord");
         addWord.addActionListener(listener);
         add(addWord);
         addSynonym = new JButton("add Synonym");
