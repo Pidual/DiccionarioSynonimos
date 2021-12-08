@@ -29,7 +29,7 @@ public class Word {
         return synonimousList.size();
     }
 
-    public String getFirtsSynonym(){
-        return synonimousList.get(0);
+    public ArrayList<String> getSynonymsList(){
+        return synonimousList;
     }
 }

@@ -19,14 +19,8 @@ public class Dictionary {
 
     }
 
-    public void addWord(String word, ArrayList<String> synonyms) {
-        wordsList.add(createWord(word, synonyms));
-    }
-
     /**
      * Sobre carga del metodo addWord si algo se borra el de arriba
-     * crea una palabra anumaaa
-     * 
      * @param partes
      */
     public void addWord(String[] partes) {

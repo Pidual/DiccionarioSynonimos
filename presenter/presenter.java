@@ -13,6 +13,8 @@ public class Presenter implements ActionListener {
     private Dictionary wikipedia;
     private FileOperation fileOperation;
     private ArrayList<String> wordAndSynonymsList;
+    private int i;
+    private int counter;
 
     public void run() {
         wikipedia = new Dictionary();
@@ -24,22 +26,29 @@ public class Presenter implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent event) {
         String command = event.getActionCommand();
+        String  text = view.getText();
         switch (command) {
             case "findTheSynonym":
-                String text = view.getText();
-                int counter;
-                if (text.isBlank() == true) {
+                if (wikipedia.searchWord(text) == null) {
                     view.wordNotFound();
                 } else {
-                    counter = wikipedia.searchWord(text).getSynonymCount();
-                    view.actualizeWordShowCaser(wikipedia.searchWord(text).getFirtsSynonym(), counter);
+                counter = wikipedia.searchWord(text).getSynonymCount();
+                view.actualizeWordShowCaser(wikipedia.searchWord(text).getSynonymsList().get(i),counter);
                 }
                 break;
             case "leftButtonPressed":
-                System.out.println("El boton << presionado");
+                    i--;
+                    if(i < 0) {
+                        i = counter-1;
+                    }
+                    view.actualizeWordShowCaserSynonyms(wikipedia.searchWord(text).getSynonymsList().get(i));
                 break;
             case "rigthButtonPressed":
-                System.out.println("El boton >> presionado");
+                    i++;
+                    if(i > counter-1) {
+                        i = 0;
+                    }
+                    view.actualizeWordShowCaserSynonyms(wikipedia.searchWord(text).getSynonymsList().get(i));
                 break;
             case "addWord":
                 System.out.println("Palabra activada");
