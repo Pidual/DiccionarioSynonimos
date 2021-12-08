@@ -27,6 +27,10 @@ public class Dictionary {
         wordsList.add(createWord(partes[0], removeTheFirtsThenArrayList(partes)));       
     }
 
+    public void addWord(String word){
+        createWord(word, new ArrayList<String>());
+    }
+
     /**
      * Metodo Auxuliar para quitar el primer elemento de un Array y de paso
      * convertirlo en una lista
