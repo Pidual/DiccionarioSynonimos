@@ -38,7 +38,11 @@ public class DiccionaryView extends JFrame {
         ss = new SynoymMannagerPanel(listener); // Inicia el panel que muestra los sinonimos
         ss.setBackground(new Color(254, 204, 102)); // cOLOR para puntos de stylo
         ss.setPreferredSize(ss.getPreferredSize());
-        add(ss, BorderLayout.SOUTH);        
+        add(ss, BorderLayout.SOUTH);
+
+        rwd = new ReadWordsDialog(listener);
+        rwd.setSize(250, 150);
+        rwd.setLocationRelativeTo(null);
     }
 
     public String getText(){
