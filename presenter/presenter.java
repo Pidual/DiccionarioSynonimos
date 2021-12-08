@@ -58,8 +58,9 @@ public class Presenter implements ActionListener {
                     System.out.println("boton presionado");
                 break;
             case "addSynonym":
-                   
-
+                   view.showJDialog();
+                   view.getJDialogText();
+                   System.out.println("addsynonym");
                 break;
             default:
                 break;

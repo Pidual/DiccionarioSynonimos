@@ -3,6 +3,7 @@ package views;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class SynoymMannagerPanel extends JPanel {
@@ -24,4 +25,15 @@ public class SynoymMannagerPanel extends JPanel {
         addSynonym.addActionListener(listener);
         add(addSynonym);
     }
+
+    private void actionPerformed(ActionEvent e){
+        if(e.getSource() == addWord){
+            ReadWordsDialog rwd = new ReadWordsDialog(this, true);
+            rwd.setTitle("Add Word");
+            rwd.setLocationRelativeTo(null);
+            rwd.setSize(500,200);
+            rwd.setVisible(true);
+        }
+    }
+
 }
