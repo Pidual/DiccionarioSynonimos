@@ -1,4 +1,4 @@
-agua	liquido	fluido	aguoso
-liquido	fluido	aguoso	agua
-fluido	agua	liquido 
-comida	alimento	nutrientes	sustento
+agua,liquido,fluido,aguoso,
+comida,alimento,nutrientes,
+computadora,ordenador,maquina,pc
+

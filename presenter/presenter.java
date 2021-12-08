@@ -70,10 +70,6 @@ public class Presenter implements ActionListener {
                 view.setJDialogSynonymsVisibility(false);
                 save();
                 break;
-
-            case "save":
-                save();
-            break;
             default:
                 break;
         }
@@ -85,7 +81,7 @@ public class Presenter implements ActionListener {
     public void load() {
         wordAndSynonymsList = fileOperation.loadTextFile("diccionarioDePalabras.txt");
         for (int i = 0; i < wordAndSynonymsList.size(); i++) {
-            String[] partes = wordAndSynonymsList.get(i).split("\t");
+            String[] partes = wordAndSynonymsList.get(i).split(",");
             wikipedia.addWord(partes);
         }
     }

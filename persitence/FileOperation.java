@@ -34,7 +34,7 @@ public class FileOperation {
     public void saveTextFile(ArrayList<String> wordsAndSynonyms) {
         try {
             ArrayList<String> lines = wordsAndSynonyms;
-            BufferedWriter writer = new BufferedWriter(new FileWriter("diccionarioPLSWORK.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(path));
             for (int i = 0; i < lines.size(); i++) {
                 writer.write(lines.get((i)));
             }

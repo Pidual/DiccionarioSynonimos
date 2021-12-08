@@ -39,13 +39,13 @@ public class Word {
         } else {
             
             for (String string : synonimousList) {
-                format += string + "   ";
+                format += string + ",";
             }
         }
         return format;
     }
 
     public String getWordFormated() {
-        return word + "   ";
+        return word + ",";
     }
 }

@@ -9,7 +9,6 @@ public class SynoymMannagerPanel extends JPanel {
     
     private JButton addWord;
     private JButton addSynonym;
-    private JButton save;
 
     public SynoymMannagerPanel(ActionListener listener){
         initComponents(listener);
@@ -24,10 +23,5 @@ public class SynoymMannagerPanel extends JPanel {
         addSynonym.setActionCommand("ShowAddSynonym");
         addSynonym.addActionListener(listener);
         add(addSynonym);
-
-        save = new JButton("Save");
-        save.setActionCommand("save");
-        save.addActionListener(listener);
-        add(save);
     }
 }
