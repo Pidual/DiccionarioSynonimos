@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Dictionary {
 
-    ArrayList<Word> wordsList = new ArrayList<>();
+    ArrayList<Word> wordsList;
 
     public Dictionary() {
         wordsList = new ArrayList<Word>();
@@ -15,8 +15,8 @@ public class Dictionary {
         return word;
     }
 
-    public void addSynonimous(String word, String synonimous) {
-
+    public void addSynonimous(Word word, String synonimous) {
+        word.addSynonym(synonimous);
     }
 
     /**

@@ -51,10 +51,11 @@ public class Presenter implements ActionListener {
                     view.actualizeWordShowCaserSynonyms(wikipedia.searchWord(text).getSynonymsList().get(i));
                 break;
             case "addWord":
-                System.out.println("Palabra activada");
+                    wikipedia.addWord();
                 break;
             case "addSynonym":
-                System.out.println("Sinonimo activado");
+                    
+                    wikipedia.addSynonimous(wikipedia.searchWord(text), );
                 break;
 
             default:
@@ -72,4 +73,5 @@ public class Presenter implements ActionListener {
             wikipedia.addWord(partes);
         }
     }
+
 }

@@ -12,6 +12,10 @@ public class Word {
         this.synonimousList = synonimousList;
     }
 
+    public void addSynonym(String synonym){
+        synonimousList.add(synonym);
+    }
+
     public String getWord() {
         return word;
     }
