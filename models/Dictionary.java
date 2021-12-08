@@ -28,7 +28,7 @@ public class Dictionary {
     }
 
     public void addWord(String word){
-        createWord(word, new ArrayList<String>());
+        wordsList.add(createWord(word, new ArrayList<String>()));
     }
 
     /**
@@ -54,5 +54,9 @@ public class Dictionary {
             }
         }
         return searchedWord;
+    }
+
+    public ArrayList<Word> getWordList(){
+        return wordsList;
     }
 }
