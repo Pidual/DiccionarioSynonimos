@@ -48,7 +48,11 @@ public class DiccionaryView extends JFrame {
     }
 
     public void actualizeWordShowCaser(String text , int counter){
-        wsp.actualizeWordShowCaser(text,counter);
+        wsp.actualizeWordShowCaserAndCounter(text,counter);
+    }
+
+    public void wordNotFound(){
+        wsp.actualizeWordShowCaser("SYNONYM NOT FOUND");
     }
 
 }

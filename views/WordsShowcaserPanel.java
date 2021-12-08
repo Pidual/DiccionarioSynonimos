@@ -49,8 +49,12 @@ public class WordsShowcaserPanel extends JPanel {
 
     }
 
-    public void actualizeWordShowCaser(String text, int counter){
+    public void actualizeWordShowCaserAndCounter(String text, int counter){
         wordShowcaser.setText(text);
         synonymCounter.setText("Synonym Counter: "+Integer.toString(counter));
+    }
+
+    public void actualizeWordShowCaser(String text){
+        wordShowcaser.setText(text);
     }
 }

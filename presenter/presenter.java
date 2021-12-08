@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-
 public class Presenter implements ActionListener {
 
     private DiccionaryView view;
@@ -27,11 +26,14 @@ public class Presenter implements ActionListener {
         String command = event.getActionCommand();
         switch (command) {
             case "findTheSynonym":
-                String text;
+                String text = view.getText();
                 int counter;
-                text = view.getText();
-                counter = wikipedia.searchWord(text).getSynonymCount();
-                view.actualizeWordShowCaser(wikipedia.searchWord(text).getFirtsSynonym(),counter);
+                if (text.isBlank() == true) {
+                    view.wordNotFound();
+                } else {
+                    counter = wikipedia.searchWord(text).getSynonymCount();
+                    view.actualizeWordShowCaser(wikipedia.searchWord(text).getFirtsSynonym(), counter);
+                }
                 break;
             case "leftButtonPressed":
                 System.out.println("El boton << presionado");
@@ -57,8 +59,8 @@ public class Presenter implements ActionListener {
     public void load() {
         wordAndSynonymsList = fileOperation.loadTextFile("diccionarioDePalabras.txt");
         for (int i = 0; i < wordAndSynonymsList.size(); i++) {
-            String [] partes = wordAndSynonymsList.get(i).split("\t");
+            String[] partes = wordAndSynonymsList.get(i).split("\t");
             wikipedia.addWord(partes);
-        }   
+        }
     }
 }
