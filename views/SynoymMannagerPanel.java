@@ -26,11 +26,11 @@ public class SynoymMannagerPanel extends JPanel {
     }
 
     private void ActionPerformed(ActionEvent evt){
-        ReadWordPanel rwp = new ReadWordPanel();
-        rwp.setTitle("Add Word");
-        rwp.setLocationRelativeTo(null);
-        rwp.setSize(500,200);
-        rwp.setVisible(true);
+        ReadWordsDialog rwd = new ReadWordsDialog();
+        rwd.setTitle("Add Word");
+        rwd.setLocationRelativeTo(null);
+        rwd.setSize(500,200);
+        rwd.setVisible(true);
     }
 
 }
