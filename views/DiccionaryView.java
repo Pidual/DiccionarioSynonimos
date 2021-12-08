@@ -3,7 +3,6 @@ package views;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.border.EtchedBorder;
-
 import java.awt.Color;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
@@ -13,6 +12,7 @@ public class DiccionaryView extends JFrame {
     private SearchPanel sp;
     private SynoymMannagerPanel ss;
     private WordsShowcaserPanel wsp;
+    private ReadWordPanel rwp;
 
     public DiccionaryView(ActionListener listener) {
         super("Synonims Diccionary");
@@ -40,6 +40,12 @@ public class DiccionaryView extends JFrame {
         ss.setBackground(new Color(254, 204, 102)); // cOLOR para puntos de stylo
         ss.setPreferredSize(ss.getPreferredSize());
         add(ss, BorderLayout.SOUTH);
+
+        rwp = new ReadWordPanel(listener); // Inicia el panel que muestra los sinonimos
+        rwp.setBackground(new Color(254, 204, 102)); // cOLOR para puntos de stylo
+        rwp.setPreferredSize(ss.getPreferredSize());
+        rwp.setVisible(true);
+        add(rwp, BorderLayout.SOUTH);
 
     }
 

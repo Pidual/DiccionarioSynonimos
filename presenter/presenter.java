@@ -51,6 +51,7 @@ public class Presenter implements ActionListener {
                     view.actualizeWordShowCaserSynonyms(wikipedia.searchWord(text).getSynonymsList().get(i));
                 break;
             case "addWord":
+                    
                     wikipedia.addWord(text); //JDialog :)
                 break;
             case "addSynonym":
