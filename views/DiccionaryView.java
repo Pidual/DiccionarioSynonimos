@@ -6,7 +6,6 @@ import javax.swing.border.EtchedBorder;
 import java.awt.Color;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class DiccionaryView extends JFrame {
 
@@ -15,7 +14,7 @@ public class DiccionaryView extends JFrame {
     private WordsShowcaserPanel wsp;
     private ReadWordsDialog rwd;
 
-    public DiccionaryView(ActionListener listener, ActionEvent event) {
+    public DiccionaryView(ActionListener listener) {
         super("Synonims Diccionary");
         initComponents(listener);
         setSize(500, 200); // width and height
